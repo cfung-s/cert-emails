@@ -12,58 +12,56 @@ import {
 } from "@react-email/components";
 import * as React from "react";
 
-interface KoalaWelcomeEmailProps {
-	userFirstname: string;
-}
+// interface KoalaWelcomeEmailProps {
+// 	userFirstname: string;
+// }
 
 const baseUrl = process.env.VERCEL_URL
 	? `https://${process.env.VERCEL_URL}`
 	: "";
 
-export const KoalaWelcomeEmail = ({
-	userFirstname,
-}: KoalaWelcomeEmailProps) => (
+export const KoalaWelcomeEmail = () => (
 	<Html>
 		<Head />
 		<Preview>
-			The sales intelligence platform that helps you uncover qualified leads.
+			Felicidades {"{{ nombre_completo }}"} 
 		</Preview>
 		<Body style={main}>
 			<Container style={container}>
 				<Img
-					src={`${baseUrl}/static/koala-logo.png`}
-					width="170"
-					height="50"
+					src={`${baseUrl}/static/senacyt.png`}
+					width="320"
+					height="95"
 					alt="Koala"
 					style={logo}
 				/>
-				<Text style={paragraph}>Hi {userFirstname},</Text>
+				<Text style={paragraph}>Estimado {"{{ nombre_completo }}"},</Text>
 				<Text style={paragraph}>
-					Welcome to Koala, the sales intelligence platform that helps you
-					uncover qualified leads and close deals faster.
+					Por este medio le informamos que su certificado ha sido generado y está listo para su descarga.
 				</Text>
 				<Section style={btnContainer}>
-					<Button style={button} href="https://getkoala.com">
-						Get started
+					<Button style={button} href="{{ enlace }}">
+						Haz click aquí para descargar tu certificado
 					</Button>
 				</Section>
 				<Text style={paragraph}>
-					Best,
-					<br />
-					The Koala team
+					Saludos.
+				</Text>
+				<Text style={smallText}>
+					Este correo fue generado automáticamente por el Sistema de Emisión de Certificados de SENACYT.
 				</Text>
 				<Hr style={hr} />
 				<Text style={footer}>
-					470 Noor Ave STE B #1148, South San Francisco, CA 94080
+					Clayton Ciudad del Saber Edif.205, Panamá.
 				</Text>
 			</Container>
 		</Body>
 	</Html>
 );
 
-KoalaWelcomeEmail.PreviewProps = {
-	userFirstname: "Alan",
-} as KoalaWelcomeEmailProps;
+// KoalaWelcomeEmail.PreviewProps = {
+// 	userFirstname: "Alan",
+// } as KoalaWelcomeEmailProps;
 
 export default KoalaWelcomeEmail;
 
@@ -86,6 +84,11 @@ const paragraph = {
 	fontSize: "16px",
 	lineHeight: "26px",
 };
+
+const smallText = {
+	fontSize: "12px",
+	color: "#8898aa",
+}
 
 const btnContainer = {
 	textAlign: "center" as const,

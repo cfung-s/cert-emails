@@ -1,0 +1,24 @@
+<mjml>
+   <mj-head>
+    <mj-preview>Certificado Emitido</mj-preview>
+  </mj-head>
+  <mj-body>
+    <mj-section>
+      <mj-column>
+
+        <mj-image width="300px" src="https://raw.githubusercontent.com/cfung-s/assets/9fef9f3b6737927669b858d3523e63c21500deb8/senacyt_full.png"></mj-image>
+
+        <mj-divider border-color="#0075ba" border-width="1px"></mj-divider>
+
+        <mj-text font-size="18px" font-family="helvetica">¡Enhorabuena! {{ nombre_completo }},</mj-text>
+        <mj-text font-size="16px" font-family="helvetica">Por este medio le informamos que su certificado ha sido generado y está listo para su descarga.</mj-text>
+        <mj-button background-color="#0098d7" font-weight="bold" href="{{ enlace }}">
+          Haga click aquí para descargar su certificado
+        </mj-button>
+        <mj-text font-size="12px" font-family="helvetica" color="#8898aa">Este correo fue generado automáticamente por el Sistema de Emisión de Certificados de SENACYT.</mj-text>
+        <mj-divider border-color="#0075ba" border-width="1px"></mj-divider>
+        <mj-text font-size="12px" font-family="helvetica" color="#8898aa">Clayton Ciudad del Saber Edif.205, Panamá.</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
